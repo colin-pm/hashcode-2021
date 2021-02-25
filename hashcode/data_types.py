@@ -89,7 +89,7 @@ class Intersection:
             self._pattern = []
             self._counter = 0
             for pattern_item in pattern_list:
-                for _ in pattern_item[1]:
+                for _ in range(pattern_item[1]):
                     self._pattern.append(pattern_item[0])
 
         def update(self):

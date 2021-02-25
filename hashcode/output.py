@@ -7,7 +7,7 @@ def output(intersection_patterns, output_file):
     """
     with open(output_file, 'w') as f:
         f.write(f'{len(intersection_patterns)}\n')
-        for intersection, pattern in intersection_patterns:
+        for intersection, pattern in intersection_patterns.items():
             f.write(f'{intersection}\n')
             f.write(f'{len(pattern)}\n')
             for street, duration in pattern:
