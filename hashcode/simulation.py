@@ -12,11 +12,7 @@ class Simulation:
 
     def run(self):
         for _ in range(self._duration):
-            self.update_lights()
+            for intersection in self._intersections:
+                intersection.update_light()
             for car in self._cars:
                 car.step()
-
-
-    def update_lights(self):
-        # TODO
-        return
