@@ -15,7 +15,7 @@ class Car:
         self.time_on_road = 0
         self.distance = 0
         self.path = path
-        self.street_remaining = len(path[0])
+        self.street_remaining = path[0].length
         
     def step(self):
         
