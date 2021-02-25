@@ -23,7 +23,11 @@ def run(input_file, output_file):
         pattern = [(street.name, duration) for street in intersection.input_streets]
         patterns[intersection.intersection_number] = pattern
         intersection.add_pattern(pattern)
+
+    # Run simulation
     s.run()
+
+    # Output pattern to file
     output(patterns, output_file)
     return None
 
