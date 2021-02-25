@@ -38,11 +38,8 @@ class Car:
         else:
             # move down the street one unit
             self.street_remaining -= 1
-            
 
     
-
-
 class Intersection:
     def __init__(self, intersection_number):
         self.intersection_number = intersection_number
@@ -73,7 +70,7 @@ class Intersection:
 
         # skip if car is not next in the queue
         if self._queues[street.name][0] != car:
-           return False
+            return False
 
         # remove the car from the queue
         self._queues[street.name].pop(0)
