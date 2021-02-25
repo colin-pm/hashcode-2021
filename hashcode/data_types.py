@@ -20,24 +20,24 @@ class Car:
     def step(self):
         
         # if car is done
-        if(len(path) == 0)
+        if len(self.path) == 0:
             return
 
-        self.time_on_road++
+        self.time_on_road += 1
 
-        if(self.street_remaining == 0):
+        if self.street_remaining == 0:
             # car is in the intersection
-            intersection = path[0].end_intersection
+            intersection = self.path[0].end_intersection
             # if we move through the intersection...
-            if(intersection.pass_car(self)):
+            if intersection.pass_car(self):
                 # remove the path
                 self.path.pop(0)
                 # reset street_remaining for the new current street
-                self.street_remaining = path[0].length
+                self.street_remaining = self.path[0].length
             
         else:
             # move down the street one unit
-            self.street_remaining--
+            self.street_remaining -= 1
             
 
     
@@ -68,18 +68,18 @@ class Intersection:
     def pass_car(self, car, street):
 
         #skip if this street is not active
-        if(_active_street != street):
-            return false
+        if self._active_street != street:
+            return False
 
         # skip if car is not next in the queue
-        if(self._queues[street.name][0] != car)
-           return false
+        if self._queues[street.name][0] != car:
+           return False
 
         # remove the car from the queue
         self._queues[street.name].pop(0)
         
         #indicate that the car has left the intersection
-        return true
+        return True
 
     def add_car(self, car, street):
         self._queues[street.name].append(car)
