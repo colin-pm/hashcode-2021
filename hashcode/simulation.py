@@ -9,3 +9,14 @@ class Simulation:
         self._cars = data['cars']
         self._score = data['score']
         self._intersections = data['intersections']
+
+    def run(self):
+        for _ in range(self._duration):
+            self.update_lights()
+            for car in self._cars:
+                car.step()
+
+
+    def update_lights(self):
+        # TODO
+        return
