@@ -23,9 +23,10 @@ def read_file(file_path):
             p = int(l[0])
             car = Car([])
             for i in range(1, len(l)):
-                car.path.append(l[i])
-                i = intersections[streets[car.path[0]].end_intersection]
-                i.add_car(car, streets[car.path[0]])
+                car.path.append(l[i].strip())
+            i = intersections[streets[car.path[0]].end_intersection]
+            i.add_car(car, streets[car.path[0]])
+            car.path.pop()
 
             cars.append(car)
 
