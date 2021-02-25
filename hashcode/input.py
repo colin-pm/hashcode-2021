@@ -18,7 +18,7 @@ def read_file(file_path):
             streets[street.name] = (street)
             intersections[int(l[1])].add_input_street(street)
 
-        for _ in range(int(number_of_cars)):
+        for _ in range(number_of_cars):
             l = f.readline().split(' ')
             p = int(l[0])
             car = Car([])
