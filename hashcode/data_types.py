@@ -10,4 +10,3 @@ class Street:
 @dataclass
 class Car:
     path: list
-    
