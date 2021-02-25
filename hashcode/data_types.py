@@ -45,15 +45,15 @@ class Car:
 
 class Intersection:
     def __init__(self, intersection_number):
-        self._intersection_number = intersection_number
-        self._input_streets = []
+        self.intersection_number = intersection_number
+        self.input_streets = []
         self._active_street = None
         self._counter = 0
         self._pattern = None
         self._queues = defaultdict(list)
 
     def add_input_street(self, street):
-        self._input_streets.append(street)
+        self.input_streets.append(street)
 
     def update_light(self):
         self._active_street = self._pattern.update()

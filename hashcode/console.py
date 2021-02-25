@@ -1,5 +1,6 @@
 import argparse
 from hashcode.simulation import Simulation
+from hashcode.output import output
 
 
 def main():
@@ -14,6 +15,12 @@ def main():
 def run(input_file, output_file):
     print(f"Input: {input_file}, Output: {output_file}")
     s = Simulation(input_file)
+
+    # Crude pattern making
+    patterns = {}
+    duration = 2
+    for intersection in s.intersections:
+        patterns[intersection.intersection_number] = [(street.name, duration) for street in intersection.input_streets]
     s.run()
-    output = s.output()
+    output(output_file)
     return None
