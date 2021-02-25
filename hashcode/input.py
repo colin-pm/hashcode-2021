@@ -15,7 +15,7 @@ def read_file(file_path):
             p = int(l[0])
             car = Car([])
             for i in range(1,len(l)):
-                car.path.append(l[i])
+                car.path.append(l[i].strip())
             cars.append(car)
             
         return {'streets': streets, 'cars': cars, 'score': score}
