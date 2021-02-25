@@ -1,4 +1,5 @@
 import argparse
+from hashcode.simulation import Simulation
 
 
 def main():
@@ -12,5 +13,7 @@ def main():
 
 def run(input_file, output_file):
     print(f"Input: {input_file}, Output: {output_file}")
-    # TODO Insert entry point
+    s = Simulation(input_file)
+    s.run()
+    output = s.output()
     return None
