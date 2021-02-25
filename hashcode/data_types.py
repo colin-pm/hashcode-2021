@@ -35,7 +35,7 @@ class Intersection:
             self._changed = False
         else:
             if len(self._queues[self._active_street.name]):
-                next_car = self._queues.pop()
+                next_car = self._queues[self._active_street.name].pop()
                 next_street = next_car.path.pop()
                 next_street.add_car(next_car)
 
