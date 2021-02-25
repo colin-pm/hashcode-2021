@@ -12,6 +12,7 @@ class Street:
 
 class Car:
     def __init__(self, path):
+        self.time_on_road = 0
         self.distance = 0
         self.path = path
         self.street_remaining = path[0].length
@@ -21,6 +22,8 @@ class Car:
         # if car is done
         if(len(path) == 0)
             return
+
+        self.time_on_road++
 
         if(self.street_remaining == 0):
             # car is in the intersection
