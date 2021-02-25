@@ -2,11 +2,14 @@ from collections import defaultdict
 
 
 class Intersection:
-    def __init__(self, input_streets, output_streets):
-        self._input_streets = input_streets
+    def __init__(self, intersection_number):
+        self._input_streets = []
         self._active_street = None
         self._changed = False
         self._queues = defaultdict(list)
+
+    def add_input_street(self, street):
+        self._input_streets.append(street)
 
     def select_street(self, street):
         self._active_street = street
