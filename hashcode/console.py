@@ -18,9 +18,13 @@ def run(input_file, output_file):
 
     # Crude pattern making
     patterns = {}
-    duration = 2
+    duration = 3
     for intersection in s.intersections:
         patterns[intersection.intersection_number] = [(street.name, duration) for street in intersection.input_streets]
     s.run()
     output(output_file)
     return None
+
+
+if __name__ == '__main__':
+    main()

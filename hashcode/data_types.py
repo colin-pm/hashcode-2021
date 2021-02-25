@@ -15,7 +15,7 @@ class Car:
         self.time_on_road = 0
         self.distance = 0
         self.path = path
-        self.street_remaining = path[0].length
+        self.street_remaining = len(path[0])
         
     def step(self):
         
@@ -39,7 +39,7 @@ class Car:
             # move down the street one unit
             self.street_remaining -= 1
 
-    
+
 class Intersection:
     def __init__(self, intersection_number):
         self.intersection_number = intersection_number

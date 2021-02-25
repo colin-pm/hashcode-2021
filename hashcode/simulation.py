@@ -12,8 +12,8 @@ class Simulation:
         self.patterns = {}
 
     def run(self):
-        for _ in range(self._duration):
-            for intersection in self._intersections:
+        for _ in range(self.duration):
+            for intersection in self.intersections:
                 intersection.update_light()
-            for car in self._cars:
+            for car in self.cars:
                 car.step()
