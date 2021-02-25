@@ -9,7 +9,7 @@ def read_file(file_path):
         cars = []
         intersections = []
 
-        for i in range(number_of_intersections):
+        for i in range(int(number_of_intersections)):
             intersections.append(Intersection(i))
 
         for _ in range(int(number_of_streets)):
