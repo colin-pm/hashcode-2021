@@ -13,6 +13,8 @@ class Street:
 @dataclass
 class Car:
     path: list
+    street_remaining: int
+    
 
 
 class Intersection:
