@@ -11,4 +11,4 @@ def output(intersection_patterns, output_file):
             f.write(f'{intersection}\n')
             f.write(f'{len(pattern)}\n')
             for street, duration in pattern:
-                f.write(f'{street} {duration}')
+                f.write(f'{street} {duration}\n')

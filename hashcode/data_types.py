@@ -27,6 +27,7 @@ class Car:
 
         if self.street_remaining == 0:
             # car is in the intersection
+            print(self.path[0])
             intersection = self.path[0].end_intersection
             # if we move through the intersection...
             if intersection.pass_car(self):
