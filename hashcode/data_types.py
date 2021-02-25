@@ -36,7 +36,7 @@ class Intersection:
         else:
             if len(self._queues[self._active_street.name]):
                 next_car = self._queues.pop()
-                next_street = next_car.streets.pop()
+                next_street = next_car.path.pop()
                 next_street.add_car(next_car)
 
     def add_car(self, car, street):

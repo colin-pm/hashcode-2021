@@ -1,4 +1,5 @@
-from .data_types import Street, Car
+from .data_types import Street, Car, Intersection
+
 
 def read_file(file_path):
     with open(file_path, 'r') as f:
@@ -6,9 +7,16 @@ def read_file(file_path):
 
         streets = []
         cars = []
+        intersections = []
+
+        for i in range(number_of_intersections):
+            intersections.append(Intersection(i))
+
         for _ in range(int(number_of_streets)):
             l = f.readline().split(' ')
-            streets.append(Street(l[2], int(l[3]), int(l[0]), int(l[1])))
+            street = Street(l[2], int(l[3]), int(l[0]), int(l[1]))
+            streets.append(street)
+            intersections[int(l[1])].add_input_street(street)
 
         for _ in range(int(number_of_cars)):
             l = f.readline().split(' ')
