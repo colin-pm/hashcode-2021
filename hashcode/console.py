@@ -17,10 +17,14 @@ def run(input_file, output_file):
     s = Simulation(input_file)
 
     # Crude pattern making
+    street_set = set()
+    for car in s.cars:
+        street_set = street_set.union(set([street for street in car.path]))
+
     patterns = {}
-    duration = 3
+    duration = 1
     for intersection in s.intersections:
-        pattern = [(street.name, duration) for street in intersection.input_streets]
+        pattern = [(street.name, duration) for street in intersection.input_streets if street.name in street_set]
         patterns[intersection.intersection_number] = pattern
         intersection.add_pattern(pattern)
 

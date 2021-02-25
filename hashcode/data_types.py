@@ -93,6 +93,7 @@ class Intersection:
                     self._pattern.append(pattern_item[0])
 
         def update(self):
-            street = self._pattern[self._counter % len(self._pattern)]
-            self._counter += 1
-            return street
+            if self._pattern:
+                street = self._pattern[self._counter % len(self._pattern)]
+                self._counter += 1
+                return street
